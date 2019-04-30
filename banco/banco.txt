@@ -1,0 +1,36 @@
+﻿
+/*
+alterar funcao "banco.banco_doacao.fazer_doacao" e alterar email para enviar os dados. No insert inserir email que deseja receber as mensagem de recebimento de doacao;
+*/
+
+
+create table usuario
+(
+	nome_usuario varchar(70),
+	cpfcnpj integer,
+	email varchar(100),
+	telefone integer,
+	endereco varchar(100),
+	cep integer,
+	cidade varchar(50),
+	permissao integer
+);
+
+
+insert into usuario values('MARIO',123456,'seu_email_aqui@hotmail.com',231231,'ggggg',123456,'CAXIAS DO SUL',99);
+insert into usuario values('RONALDO',123451,'seu_email_aqui@hotmail.com',34242,'sssss',12322456,'CAXIAS DO SUL',0);
+insert into usuario values('JOAO',786453,'seu_email_aqui@hotmail.com',34242,'sssss',12322456,'CAXIAS DO SUL',1);
+insert into usuario values('ARNALDO',1323123,'seu_email_aqui@hotmail.com',34242,'aaaaa',12322456,'CAXIAS DO SUL',0);
+insert into usuario values('PEDRO',1233451,'seu_email_aqui@hotmail.com',34242,'sssss',12322456,'CAXIAS DO SUL',0);
+
+
+create table doacao
+(
+	doador_cfpcnpj integer,
+	donatario_cfpcnpj integer,
+	valor numeric(15,2),
+	bem varchar(100),
+	email varchar(100)
+);
+
+
