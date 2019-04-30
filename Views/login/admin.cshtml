@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "admin";
+}
+
+@model List<projeto_web_aula.Models.usuario>
+
+
+@using (Html.BeginForm("gravar_lista_usuario", "login", FormMethod.Post))
+{
+    if (Model.Count != 0)
+    {
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>CPFCNPJ</th>
+                    <th>Permissão</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.permissao != 99)
+                    {
+
+                        <tr>
+                            <td>@item.nome_usuario</td>
+                            <td>@item.cpfcnpj</td>
+                            <td id="permissao@(item.Id)">@item.permissao</td>
+                            <td>
+                                <a href="#" onclick="permissao('@item.Id')">+</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    }
+    <tr>
+        <td colspan="2"><input type="submit" value="Enviar" /></td>
+    </tr>
+}
+
+
+<script>
+    function permissao(usuario) {
+        var url = "@Url.Action("dados_usuario", "login")";
+        var params = { id: usuario };
+        $.post(url, params, RetornoSucesso);
+    }
+
+
+
+    function RetornoSucesso(retorno) {
+        var elemento = $("#permissao" + retorno.Id);
+        elemento.html(retorno.permissao);
+    }
+</script>

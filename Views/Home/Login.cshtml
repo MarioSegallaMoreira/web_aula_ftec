@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@model projeto_web_aula.Models.usuario
+
+@using (Html.BeginForm("login_usuario", "login", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(m => m.nome_usuario)</td>
+        <td>
+            @Html.TextBoxFor(m => m.nome_usuario)
+            @Html.ValidationMessageFor(m => m.nome_usuario)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.cpfcnpj)</td>
+        <td>
+            @Html.TextBoxFor(m => m.cpfcnpj)
+            @Html.ValidationMessageFor(m => m.cpfcnpj)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="submit" value="Entrar" /></td>
+    </tr>
+</table>
+}

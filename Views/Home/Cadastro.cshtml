@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+
+@model projeto_web_aula.Models.usuario
+
+<h2>Novo Usuário</h2>
+
+@using (Html.BeginForm("gravar_usuario", "cadastro", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(m => m.nome_usuario)</td>
+        <td>
+            @Html.TextBoxFor(m => m.nome_usuario)
+            @Html.ValidationMessageFor(m => m.nome_usuario)
+        </td>
+    </tr>
+   
+    <tr>
+        <td>@Html.LabelFor(m => m.cpfcnpj)</td>
+        <td>
+            @Html.TextBoxFor(m => m.cpfcnpj)
+            @Html.ValidationMessageFor(m => m.cpfcnpj)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.telefone)</td>
+        <td>
+            @Html.TextBoxFor(m => m.telefone)
+            @Html.ValidationMessageFor(m => m.telefone)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.endereco)</td>
+        <td>
+            @Html.TextBoxFor(m => m.endereco)
+            @Html.ValidationMessageFor(m => m.endereco)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.cep)</td>
+        <td>
+            @Html.TextBoxFor(m => m.cep)
+            @Html.ValidationMessageFor(m => m.cep)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.cidade)</td>
+        <td>
+            @Html.TextBoxFor(m => m.cidade)
+            @Html.ValidationMessageFor(m => m.cidade)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="submit" value="Salvar" /></td>
+    </tr>
+</table>
+}
+
+
+
+

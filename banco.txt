@@ -1,0 +1,10 @@
+﻿create table usuario
+(
+	nome_usuario varchar(70),
+	cfpcnpj integer,
+	telefone integer,
+	endereco varchar(100),
+	cep integer,
+	cidade varchar(50),
+	permissao integer
+);

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "usuario";
+}
+
+
+@model projeto_web_aula.Models.doacao
+
+
+@using (Html.BeginForm("salva_doacao", "usuario", FormMethod.Post))
+{
+    <body>
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.email_donatario)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.email_donatario)
+                    @Html.ValidationMessageFor(m => m.email_donatario)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.valor)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.valor)
+                    @Html.ValidationMessageFor(m => m.valor)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.doacao_bens)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.doacao_bens)
+                    @Html.ValidationMessageFor(m => m.doacao_bens)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Enviar" /></td>
+            </tr>
+        </table>
+
+    </body>
+
+}
+
